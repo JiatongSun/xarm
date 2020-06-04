@@ -1,0 +1,8 @@
+prefix=/home/sun/Documents/Project/xarm/install
+
+Name: xarm_planning
+Description: Description of xarm_planning
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

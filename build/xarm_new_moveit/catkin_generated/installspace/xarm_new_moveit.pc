@@ -1,0 +1,8 @@
+prefix=/home/sun/Documents/Project/xarm/install
+
+Name: xarm_new_moveit
+Description: Description of xarm_new_moveit
+Version: 0.3.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

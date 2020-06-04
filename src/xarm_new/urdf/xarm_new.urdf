@@ -1,0 +1,527 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.5.1-0-g916b5db  Build Version: 1.5.7152.31018
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="xarm_new">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="2.56571213682472E-06 -0.00898617590437677 0.00787331270823633"
+        rpy="0 0 0" />
+      <mass
+        value="0.0572940346225848" />
+      <inertia
+        ixx="5.76371488808841E-05"
+        ixy="-2.91967857828589E-10"
+        ixz="1.04712696810588E-09"
+        iyy="5.41093307835269E-05"
+        iyz="7.36555407278734E-07"
+        izz="0.000101963856036541" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xarm_new/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xarm_new/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="link_1">
+    <inertial>
+      <origin
+        xyz="6.24500451351651E-17 -0.00271395581985957 0.0121376391185315"
+        rpy="0 0 0" />
+      <mass
+        value="0.125894050792552" />
+      <inertia
+        ixx="7.4611632006739E-05"
+        ixy="3.43289062159279E-23"
+        ixz="-6.64269776011072E-21"
+        iyy="6.85078336247671E-05"
+        iyz="5.26192854799441E-06"
+        izz="0.000114012935557025" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xarm_new/meshes/link_1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xarm_new/meshes/link_1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_1"
+    type="continuous">
+    <origin
+      xyz="0 0 0.0335"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="link_1" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="link_2">
+    <inertial>
+      <origin
+        xyz="-0.0554999999999998 1.94289029309402E-16 -0.0218000000000002"
+        rpy="0 0 0" />
+      <mass
+        value="0.0331006726764936" />
+      <inertia
+        ixx="9.07529641157238E-06"
+        ixy="5.1332252732847E-21"
+        ixz="-6.9450335888762E-21"
+        iyy="3.65815762789294E-05"
+        iyz="-2.32242941688522E-21"
+        izz="3.18217460529601E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xarm_new/meshes/link_2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xarm_new/meshes/link_2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_2"
+    type="continuous">
+    <origin
+      xyz="-0.0218000000000002 -0.0214899999999999 0.0278465366697234"
+      rpy="3.14159265358979 1.5707963267949 0" />
+    <parent
+      link="link_1" />
+    <child
+      link="link_2" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="link_3">
+    <inertial>
+      <origin
+        xyz="-0.04783 -2.08166817117217E-16 -0.0127999999999998"
+        rpy="0 0 0" />
+      <mass
+        value="0.0750155170933026" />
+      <inertia
+        ixx="8.93762441030407E-06"
+        ixy="6.20385459414768E-22"
+        ixz="1.6411269460701E-21"
+        iyy="0.000105451459777764"
+        iyz="4.39000387485689E-22"
+        izz="0.000106155354680136" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xarm_new/meshes/link_3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xarm_new/meshes/link_3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_3"
+    type="continuous">
+    <origin
+      xyz="-0.111 0 -0.0346000000000001"
+      rpy="-3.14159265358979 0 0" />
+    <parent
+      link="link_2" />
+    <child
+      link="link_3" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="link_4">
+    <inertial>
+      <origin
+        xyz="-0.034118144187716 -0.00969792878565746 -0.0213000000000001"
+        rpy="0 0 0" />
+      <mass
+        value="0.0395503706902083" />
+      <inertia
+        ixx="1.04545718507469E-05"
+        ixy="-5.20431108427383E-07"
+        ixz="-1.51809025256161E-22"
+        iyy="9.50587650825342E-06"
+        iyz="5.3337702474887E-22"
+        izz="1.20784718195145E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xarm_new/meshes/link_4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xarm_new/meshes/link_4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_4"
+    type="continuous">
+    <origin
+      xyz="-0.09566 0 -0.0341"
+      rpy="3.14159265358979 0 0" />
+    <parent
+      link="link_3" />
+    <child
+      link="link_4" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="gripper">
+    <inertial>
+      <origin
+        xyz="0.0139946828525941 0.00192742957865329 0.02917550381288"
+        rpy="0 0 0" />
+      <mass
+        value="0.0385295735238804" />
+      <inertia
+        ixx="9.69163246584673E-06"
+        ixy="-1.73931159406224E-07"
+        ixz="-4.42162259545074E-07"
+        iyy="6.90509384330086E-06"
+        iyz="-6.12295930459394E-08"
+        izz="8.94113928034664E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xarm_new/meshes/gripper.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xarm_new/meshes/gripper.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="gripper"
+    type="continuous">
+    <origin
+      xyz="-0.0533 0 -0.0213"
+      rpy="1.5707963267949 0 -1.5707963267949" />
+    <parent
+      link="link_4" />
+    <child
+      link="gripper" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="gripper_r1">
+    <inertial>
+      <origin
+        xyz="0.00599709527117787 0.000277976211210507 -0.00200000000000016"
+        rpy="0 0 0" />
+      <mass
+        value="0.00229207293973417" />
+      <inertia
+        ixx="8.00953403183806E-08"
+        ixy="1.97324227951185E-08"
+        ixz="-5.97054675517946E-24"
+        iyy="3.44895629651293E-07"
+        iyz="-2.07940111506613E-24"
+        izz="4.21285301585741E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xarm_new/meshes/gripper_r1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xarm_new/meshes/gripper_r1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="gripper_r1"
+    type="continuous">
+    <origin
+      xyz="-0.00800000000000001 -0.0140000000000066 0.0300000000000017"
+      rpy="1.5707963267949 -1.03225494696145 -1.5707963267949" />
+    <parent
+      link="gripper" />
+    <child
+      link="gripper_r1" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="end_r">
+    <inertial>
+      <origin
+        xyz="0.0219290452927009 -0.00330817011818113 -0.00200000000000016"
+        rpy="0 0 0" />
+      <mass
+        value="0.00143932679187371" />
+      <inertia
+        ixx="3.88004981918465E-08"
+        ixy="9.74509543100112E-08"
+        ixz="-1.06474581777031E-23"
+        iyy="4.00376051789654E-07"
+        iyz="3.39920438673816E-24"
+        izz="4.36951586347965E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xarm_new/meshes/end_r.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xarm_new/meshes/end_r.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="end_r"
+    type="continuous">
+    <origin
+      xyz="0.0289823339835635 -0.00101208540439066 0.00300000000000004"
+      rpy="0 0 1.02714983775265" />
+    <parent
+      link="gripper_r1" />
+    <child
+      link="end_r" />
+    <axis
+      xyz="0 0 1" />
+    <mimic joint="gripper_r1" multiplier="1" offset="0" />
+  </joint>
+  <link
+    name="gripper_l1">
+    <inertial>
+      <origin
+        xyz="0.00596309600823319 -0.000695635293955915 -0.00200000000000098"
+        rpy="0 0 0" />
+      <mass
+        value="0.00229207293973417" />
+      <inertia
+        ixx="7.8637626955029E-08"
+        ixy="-1.11384951212612E-09"
+        ixz="1.66029242583682E-23"
+        iyy="3.46353343014644E-07"
+        iyz="-1.73193767662909E-23"
+        izz="4.21285301585741E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xarm_new/meshes/gripper_l1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xarm_new/meshes/gripper_l1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="gripper_l1"
+    type="continuous">
+    <origin
+      xyz="-0.00799999999999931 0.0140000000000048 0.0299999999999994"
+      rpy="-1.57079632679489 -0.857447110105399 1.57079632679489" />
+    <parent
+      link="gripper" />
+    <child
+      link="gripper_l1" />
+    <axis
+      xyz="0 0 1" />
+    <mimic joint="gripper_r1" multiplier="1" offset="0" />
+  </joint>
+  <link
+    name="end_l">
+    <inertial>
+      <origin
+        xyz="0.0219290452927007 0.00330817011818071 -0.00200000000000097"
+        rpy="0 0 0" />
+      <mass
+        value="0.00143932679187371" />
+      <inertia
+        ixx="3.88004981918466E-08"
+        ixy="-9.74509543100107E-08"
+        ixz="-1.70140069102779E-24"
+        iyy="4.00376051789654E-07"
+        iyz="-5.76581737907008E-24"
+        izz="4.36951586347964E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xarm_new/meshes/end_l.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xarm_new/meshes/end_l.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="end_l"
+    type="continuous">
+    <origin
+      xyz="0.0289823339835491 -0.00101208540438016 0.0030000000000008"
+      rpy="0 0 -1.20609472258137" />
+    <parent
+      link="gripper_l1" />
+    <child
+      link="end_l" />
+    <axis
+      xyz="0 0 1" />
+    <mimic joint="end_r" multiplier="-1" offset="0" />
+  </joint>
+</robot>
