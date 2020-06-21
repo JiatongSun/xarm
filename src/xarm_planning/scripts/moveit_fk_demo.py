@@ -1,6 +1,7 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+import numpy as np
 import rospy
 import sys
 import moveit_commander
@@ -28,24 +29,26 @@ class MoveItFkDemo:
         # move arm to initial position
         arm.set_named_target('home')
         arm.go()
-        rospy.sleep(2)
+        # rospy.sleep(2)
 
-        # set target position for gripper and move gripper
-        gripper.set_joint_value_target([0.01])
+        # # set target position for gripper and move gripper
+        gripper_position = (np.array([55, -55, 55, 55]) * np.pi / 180.0).tolist()
+        gripper.set_joint_value_target(gripper_position)
         gripper.go()
-        rospy.sleep(1)
+        # rospy.sleep(1)
 
         # set target position for arm
-        joint_position = [-0.05, -0.05, -0.05, -0.05, -0.05, -0.05]
+        joint_position = (np.array([0, -73, 71, 49, 0]) * np.pi / 180.0).tolist()
         arm.set_joint_value_target(joint_position)
 
         # control arm to move
         arm.go()
-        rospy.sleep(1)
+        # rospy.sleep(1)
 
         # close and exit moveit
         moveit_commander.roscpp_shutdown()
         moveit_commander.os._exit(0)
+
 
 if __name__ == '__main__':
     try:

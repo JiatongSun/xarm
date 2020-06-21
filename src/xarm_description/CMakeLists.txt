@@ -1,33 +1,21 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(xarm_planning)
+project(xarm_description)
 
 ## Compile as C++11, supported in ROS Kinetic and newer
-add_compile_options(-std=c++11)
+# add_compile_options(-std=c++11)
 
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
-  actionlib
-  control_msgs
-  diagnostic_msgs
-  geometry_msgs
-  manipulation_msgs
-  moveit_msgs
-  moveit_ros_perception
-  moveit_ros_planning_interface
   roscpp
-  rospy
-  sensor_msgs
-  shape_msgs
-  std_msgs
-  std_srvs
   tf
-  trajectory_msgs
+  urdf
+  xacro
 )
 
 ## System dependencies are found with CMake's conventions
-find_package(Boost REQUIRED COMPONENTS system)
+# find_package(Boost REQUIRED COMPONENTS system)
 
 
 ## Uncomment this if the package has a setup.py. This macro ensures
@@ -83,7 +71,7 @@ find_package(Boost REQUIRED COMPONENTS system)
 ## Generate added messages and services with any dependencies listed here
 # generate_messages(
 #   DEPENDENCIES
-#   control_msgs#   diagnostic_msgs#   geometry_msgs#   manipulation_msgs#   moveit_msgs#   moveit_msgs#   sensor_msgs#   shape_msgs#   std_msgs#   trajectory_msgs
+#   std_msgs  # Or other packages containing msgs
 # )
 
 ################################################
@@ -117,8 +105,8 @@ find_package(Boost REQUIRED COMPONENTS system)
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
 #  INCLUDE_DIRS include
-#  LIBRARIES marm_planning
-#  CATKIN_DEPENDS actionlib control_msgs diagnostic_msgs geometry_msgs manipulation_msgs moveit_msgs moveit_msgs roscpp rospy sensor_msgs shape_msgs std_msgs std_srvs tf trajectory_msgs
+#  LIBRARIES marm_description
+#  CATKIN_DEPENDS roscpp tf urdf xacro
 #  DEPENDS system_lib
 )
 
@@ -135,7 +123,7 @@ include_directories(
 
 ## Declare a C++ library
 # add_library(${PROJECT_NAME}
-#   src/${PROJECT_NAME}/marm_planning.cpp
+#   src/${PROJECT_NAME}/marm_description.cpp
 # )
 
 ## Add cmake target dependencies of the library
@@ -146,7 +134,7 @@ include_directories(
 ## Declare a C++ executable
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
-# add_executable(${PROJECT_NAME}_node src/marm_planning_node.cpp)
+# add_executable(${PROJECT_NAME}_node src/marm_description_node.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -162,24 +150,6 @@ include_directories(
 # target_link_libraries(${PROJECT_NAME}_node
 #   ${catkin_LIBRARIES}
 # )
-
-add_executable(test_random_node src/test_random.cpp)
-target_link_libraries(test_random_node ${catkin_LIBRARIES})
-
-add_executable(test_custom_node src/test_custom.cpp)
-target_link_libraries(test_custom_node ${catkin_LIBRARIES})
-
-add_executable(add_collision_objct_node src/add_collision_objct.cpp)
-target_link_libraries(add_collision_objct_node ${catkin_LIBRARIES})
-
-add_executable(remove_collision_objct_node src/remove_collision_objct.cpp)
-target_link_libraries(remove_collision_objct_node ${catkin_LIBRARIES})
-
-add_executable(check_collision_node src/check_collision.cpp)
-target_link_libraries(check_collision_node ${catkin_LIBRARIES})
-
-add_executable(test_cartesian_path_node src/test_cartesian_path.cpp)
-target_link_libraries(test_cartesian_path_node ${catkin_LIBRARIES})
 
 #############
 ## Install ##
@@ -221,7 +191,7 @@ target_link_libraries(test_cartesian_path_node ${catkin_LIBRARIES})
 #############
 
 ## Add gtest based cpp test target and link libraries
-# catkin_add_gtest(${PROJECT_NAME}-test test/test_marm_planning.cpp)
+# catkin_add_gtest(${PROJECT_NAME}-test test/test_marm_description.cpp)
 # if(TARGET ${PROJECT_NAME}-test)
 #   target_link_libraries(${PROJECT_NAME}-test ${PROJECT_NAME})
 # endif()

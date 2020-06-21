@@ -1,6 +1,7 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+import numpy as np
 import rospy
 import sys
 import moveit_commander
@@ -31,6 +32,8 @@ class MoveItIkDemo:
 
         # Allow replanning if failed
         arm.allow_replanning(True)
+        # print(arm.get_current_pose())
+        # print(arm.get_current_rpy())
 
         # Set tolerance for position (m) and orientation (rad)
         arm.set_goal_position_tolerance(0.01)
@@ -45,13 +48,13 @@ class MoveItIkDemo:
         target_pose = PoseStamped()
         target_pose.header.frame_id = reference_frame
         target_pose.header.stamp = rospy.Time.now()
-        target_pose.pose.position.x = 0.1
-        target_pose.pose.position.y = 0.1
-        target_pose.pose.position.z = 0.1
-        target_pose.pose.orientation.x = 0.0
-        target_pose.pose.orientation.y = 0.0
-        target_pose.pose.orientation.z = 1.0
-        target_pose.pose.orientation.w = 0.0
+        target_pose.pose.position.x = 0
+        target_pose.pose.position.y = -0.238
+        target_pose.pose.position.z = 0
+        target_pose.pose.orientation.x = 0.519
+        target_pose.pose.orientation.y = -0.519
+        target_pose.pose.orientation.z = 0.480
+        target_pose.pose.orientation.w = 0.480
 
         # Set current state as initial state
         arm.set_start_state_to_current_state()
@@ -66,28 +69,27 @@ class MoveItIkDemo:
         arm.execute(traj)
         rospy.sleep(1)
 
-
-
-        # set target position for gripper and move gripper
-        gripper.set_joint_value_target([0.01])
-        gripper.go()
-        rospy.sleep(1)
-
-        # set target position for arm
-        joint_position = [-0.05, -0.05, -0.05, -0.05, -0.05, -0.05]
-        arm.set_joint_value_target(joint_position)
-
-        # control arm to move
+        # Move end effector 5cm to the right
+        arm.shift_pose_target(2, -0.01, end_effector_link)
         arm.go()
         rospy.sleep(1)
 
+        # Rotate end effector 90 degrees counterclockwise
+        # arm.shift_pose_target(5, -np.pi / 2, end_effector_link)
+        # arm.go()
+        # rospy.sleep(1)
+
+        # Move arm to initial position
+        arm.set_named_target('home')
+        arm.go()
+
         # close and exit moveit
         moveit_commander.roscpp_shutdown()
-        moveit_commander.os._exit(0)
+        # moveit_commander.os._exit(0)
 
 
 if __name__ == '__main__':
     try:
-        MoveItFkDemo()
+        MoveItIkDemo()
     except rospy.ROSException:
         pass
