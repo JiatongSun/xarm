@@ -1,0 +1,2 @@
+xarm_description:xarm_moveit_config:xarm_planning
+-DCATKIN_DEVEL_PREFIX=/home/sun/Documents/Project/xarm/devel -DCMAKE_INSTALL_PREFIX=/home/sun/Documents/Project/xarm/install -G Unix Makefiles
