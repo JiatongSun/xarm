@@ -8,7 +8,8 @@
 
 # modified environment variables
 export CMAKE_PREFIX_PATH="/home/sun/Documents/Project/xarm/devel:$CMAKE_PREFIX_PATH"
-export LD_LIBRARY_PATH="/opt/ros/melodic/lib:/home/sun/.mujoco/mujoco200/bin"
+export LD_LIBRARY_PATH="/home/sun/Documents/Project/xarm/devel/lib:/opt/ros/melodic/lib:/home/sun/.mujoco/mujoco200/bin"
+export PKG_CONFIG_PATH="/home/sun/Documents/Project/xarm/devel/lib/pkgconfig:$PKG_CONFIG_PATH"
 export PWD="/home/sun/Documents/Project/xarm/build"
 export ROSLISP_PACKAGE_DIRECTORIES="/home/sun/Documents/Project/xarm/devel/share/common-lisp"
 export ROS_PACKAGE_PATH="/home/sun/Documents/Project/xarm/src:$ROS_PACKAGE_PATH"

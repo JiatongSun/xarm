@@ -42,19 +42,21 @@ class MoveItIkDemo:
         # Move arm to initial position
         arm.set_named_target('home')
         arm.go()
-        rospy.sleep(2)
+
+        # Use forward position as target
+        forward_pose = arm.get_current_pose().pose
 
         # Set target position and quaternion for arm workspace
         target_pose = PoseStamped()
         target_pose.header.frame_id = reference_frame
         target_pose.header.stamp = rospy.Time.now()
-        target_pose.pose.position.x = 0
-        target_pose.pose.position.y = -0.238
-        target_pose.pose.position.z = 0
-        target_pose.pose.orientation.x = 0.519
-        target_pose.pose.orientation.y = -0.519
-        target_pose.pose.orientation.z = 0.480
-        target_pose.pose.orientation.w = 0.480
+        target_pose.pose.position.x = forward_pose.position.x
+        target_pose.pose.position.y = forward_pose.position.y
+        target_pose.pose.position.z = forward_pose.position.z
+        target_pose.pose.orientation.x = forward_pose.orientation.x
+        target_pose.pose.orientation.y = forward_pose.orientation.y
+        target_pose.pose.orientation.z = forward_pose.orientation.z
+        target_pose.pose.orientation.w = forward_pose.orientation.w
 
         # Set current state as initial state
         arm.set_start_state_to_current_state()
@@ -67,17 +69,14 @@ class MoveItIkDemo:
 
         # Move arm along the planned trajectory
         arm.execute(traj)
-        rospy.sleep(1)
 
         # Move end effector 5cm to the right
         arm.shift_pose_target(2, -0.01, end_effector_link)
         arm.go()
-        rospy.sleep(1)
 
         # Rotate end effector 90 degrees counterclockwise
-        # arm.shift_pose_target(5, -np.pi / 2, end_effector_link)
-        # arm.go()
-        # rospy.sleep(1)
+        arm.shift_pose_target(5, -np.pi / 2, end_effector_link)
+        arm.go()
 
         # Move arm to initial position
         arm.set_named_target('home')
@@ -85,7 +84,6 @@ class MoveItIkDemo:
 
         # close and exit moveit
         moveit_commander.roscpp_shutdown()
-        # moveit_commander.os._exit(0)
 
 
 if __name__ == '__main__':
