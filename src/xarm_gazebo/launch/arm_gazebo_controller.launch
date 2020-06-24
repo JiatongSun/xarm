@@ -1,0 +1,8 @@
+ <launch>
+
+    <rosparam file="$(find xarm_gazebo)/config/gazebo_controller.yaml" command="load"/>
+
+    <node name="gazebo_controller_spawner" pkg="gazebo_ros" type="spawner" respawn="false"
+          output="screen" ns="/arm" args="gazebo_ros_control"/>
+
+</launch>

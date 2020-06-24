@@ -3,6 +3,9 @@
     <!-- Launch Gazebo  -->
     <include file="$(find xarm_gazebo)/launch/arm_world.launch" />
 
+    <!-- gazebo_ros_control arm launch file -->
+    <include file="$(find xarm_gazebo)/launch/arm_gazebo_controller.launch" />
+
     <!-- ros_control arm launch file -->
     <include file="$(find xarm_gazebo)/launch/arm_gazebo_states.launch" />   
 

@@ -5,6 +5,8 @@
 # This file includes the relevant testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.
 subdirs("gtest")
+subdirs("mimic_joint_gazebo_tutorial-kinetic")
+subdirs("roboticsgroup_gazebo_plugins")
 subdirs("xarm_description")
 subdirs("xarm_gazebo")
 subdirs("xarm_moveit_config")

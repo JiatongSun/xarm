@@ -131,6 +131,8 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/sun/Documents/Project/xarm/build/gtest/cmake_install.cmake")
+  include("/home/sun/Documents/Project/xarm/build/mimic_joint_gazebo_tutorial-kinetic/cmake_install.cmake")
+  include("/home/sun/Documents/Project/xarm/build/roboticsgroup_gazebo_plugins/cmake_install.cmake")
   include("/home/sun/Documents/Project/xarm/build/xarm_description/cmake_install.cmake")
   include("/home/sun/Documents/Project/xarm/build/xarm_gazebo/cmake_install.cmake")
   include("/home/sun/Documents/Project/xarm/build/xarm_moveit_config/cmake_install.cmake")
