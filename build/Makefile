@@ -285,19 +285,6 @@ gtest/fast:
 .PHONY : gtest/fast
 
 #=============================================================================
-# Target rules for targets named _catkin_empty_exported_target
-
-# Build rule for target.
-_catkin_empty_exported_target: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 _catkin_empty_exported_target
-.PHONY : _catkin_empty_exported_target
-
-# fast build rule for target.
-_catkin_empty_exported_target/fast:
-	$(MAKE) -f mimic_joint_gazebo_tutorial-kinetic/CMakeFiles/_catkin_empty_exported_target.dir/build.make mimic_joint_gazebo_tutorial-kinetic/CMakeFiles/_catkin_empty_exported_target.dir/build
-.PHONY : _catkin_empty_exported_target/fast
-
-#=============================================================================
 # Target rules for targets named roboticsgroup_gazebo_mimic_joint_plugin
 
 # Build rule for target.
@@ -1623,6 +1610,19 @@ nav_msgs_generate_messages_nodejs/fast:
 	$(MAKE) -f xarm_gazebo/CMakeFiles/nav_msgs_generate_messages_nodejs.dir/build.make xarm_gazebo/CMakeFiles/nav_msgs_generate_messages_nodejs.dir/build
 .PHONY : nav_msgs_generate_messages_nodejs/fast
 
+#=============================================================================
+# Target rules for targets named _catkin_empty_exported_target
+
+# Build rule for target.
+_catkin_empty_exported_target: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _catkin_empty_exported_target
+.PHONY : _catkin_empty_exported_target
+
+# fast build rule for target.
+_catkin_empty_exported_target/fast:
+	$(MAKE) -f xarm_moveit_config/CMakeFiles/_catkin_empty_exported_target.dir/build.make xarm_moveit_config/CMakeFiles/_catkin_empty_exported_target.dir/build
+.PHONY : _catkin_empty_exported_target/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -1645,7 +1645,6 @@ help:
 	@echo "... gmock"
 	@echo "... gtest_main"
 	@echo "... gtest"
-	@echo "... _catkin_empty_exported_target"
 	@echo "... roboticsgroup_gazebo_mimic_joint_plugin"
 	@echo "... sensor_msgs_generate_messages_py"
 	@echo "... sensor_msgs_generate_messages_lisp"
@@ -1748,6 +1747,7 @@ help:
 	@echo "... bond_generate_messages_nodejs"
 	@echo "... nav_msgs_generate_messages_lisp"
 	@echo "... nav_msgs_generate_messages_nodejs"
+	@echo "... _catkin_empty_exported_target"
 .PHONY : help
 
 

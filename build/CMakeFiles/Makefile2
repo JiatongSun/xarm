@@ -405,56 +405,6 @@ clean: gtest/googlemock/gtest/CMakeFiles/gtest.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Directory level rules for directory mimic_joint_gazebo_tutorial-kinetic
-
-# Convenience name for "all" pass in the directory.
-mimic_joint_gazebo_tutorial-kinetic/all:
-
-.PHONY : mimic_joint_gazebo_tutorial-kinetic/all
-
-# Convenience name for "clean" pass in the directory.
-mimic_joint_gazebo_tutorial-kinetic/clean: mimic_joint_gazebo_tutorial-kinetic/CMakeFiles/_catkin_empty_exported_target.dir/clean
-
-.PHONY : mimic_joint_gazebo_tutorial-kinetic/clean
-
-# Convenience name for "preinstall" pass in the directory.
-mimic_joint_gazebo_tutorial-kinetic/preinstall:
-
-.PHONY : mimic_joint_gazebo_tutorial-kinetic/preinstall
-
-#=============================================================================
-# Target rules for target mimic_joint_gazebo_tutorial-kinetic/CMakeFiles/_catkin_empty_exported_target.dir
-
-# All Build rule for target.
-mimic_joint_gazebo_tutorial-kinetic/CMakeFiles/_catkin_empty_exported_target.dir/all:
-	$(MAKE) -f mimic_joint_gazebo_tutorial-kinetic/CMakeFiles/_catkin_empty_exported_target.dir/build.make mimic_joint_gazebo_tutorial-kinetic/CMakeFiles/_catkin_empty_exported_target.dir/depend
-	$(MAKE) -f mimic_joint_gazebo_tutorial-kinetic/CMakeFiles/_catkin_empty_exported_target.dir/build.make mimic_joint_gazebo_tutorial-kinetic/CMakeFiles/_catkin_empty_exported_target.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sun/Documents/Project/xarm/build/CMakeFiles --progress-num= "Built target _catkin_empty_exported_target"
-.PHONY : mimic_joint_gazebo_tutorial-kinetic/CMakeFiles/_catkin_empty_exported_target.dir/all
-
-# Build rule for subdir invocation for target.
-mimic_joint_gazebo_tutorial-kinetic/CMakeFiles/_catkin_empty_exported_target.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sun/Documents/Project/xarm/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 mimic_joint_gazebo_tutorial-kinetic/CMakeFiles/_catkin_empty_exported_target.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sun/Documents/Project/xarm/build/CMakeFiles 0
-.PHONY : mimic_joint_gazebo_tutorial-kinetic/CMakeFiles/_catkin_empty_exported_target.dir/rule
-
-# Convenience name for target.
-_catkin_empty_exported_target: mimic_joint_gazebo_tutorial-kinetic/CMakeFiles/_catkin_empty_exported_target.dir/rule
-
-.PHONY : _catkin_empty_exported_target
-
-# clean rule for target.
-mimic_joint_gazebo_tutorial-kinetic/CMakeFiles/_catkin_empty_exported_target.dir/clean:
-	$(MAKE) -f mimic_joint_gazebo_tutorial-kinetic/CMakeFiles/_catkin_empty_exported_target.dir/build.make mimic_joint_gazebo_tutorial-kinetic/CMakeFiles/_catkin_empty_exported_target.dir/clean
-.PHONY : mimic_joint_gazebo_tutorial-kinetic/CMakeFiles/_catkin_empty_exported_target.dir/clean
-
-# clean rule for target.
-clean: mimic_joint_gazebo_tutorial-kinetic/CMakeFiles/_catkin_empty_exported_target.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
 # Directory level rules for directory roboticsgroup_gazebo_plugins
 
 # Convenience name for "all" pass in the directory.
@@ -3896,7 +3846,7 @@ xarm_moveit_config/all:
 .PHONY : xarm_moveit_config/all
 
 # Convenience name for "clean" pass in the directory.
-xarm_moveit_config/clean:
+xarm_moveit_config/clean: xarm_moveit_config/CMakeFiles/_catkin_empty_exported_target.dir/clean
 
 .PHONY : xarm_moveit_config/clean
 
@@ -3904,6 +3854,38 @@ xarm_moveit_config/clean:
 xarm_moveit_config/preinstall:
 
 .PHONY : xarm_moveit_config/preinstall
+
+#=============================================================================
+# Target rules for target xarm_moveit_config/CMakeFiles/_catkin_empty_exported_target.dir
+
+# All Build rule for target.
+xarm_moveit_config/CMakeFiles/_catkin_empty_exported_target.dir/all:
+	$(MAKE) -f xarm_moveit_config/CMakeFiles/_catkin_empty_exported_target.dir/build.make xarm_moveit_config/CMakeFiles/_catkin_empty_exported_target.dir/depend
+	$(MAKE) -f xarm_moveit_config/CMakeFiles/_catkin_empty_exported_target.dir/build.make xarm_moveit_config/CMakeFiles/_catkin_empty_exported_target.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sun/Documents/Project/xarm/build/CMakeFiles --progress-num= "Built target _catkin_empty_exported_target"
+.PHONY : xarm_moveit_config/CMakeFiles/_catkin_empty_exported_target.dir/all
+
+# Build rule for subdir invocation for target.
+xarm_moveit_config/CMakeFiles/_catkin_empty_exported_target.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sun/Documents/Project/xarm/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 xarm_moveit_config/CMakeFiles/_catkin_empty_exported_target.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sun/Documents/Project/xarm/build/CMakeFiles 0
+.PHONY : xarm_moveit_config/CMakeFiles/_catkin_empty_exported_target.dir/rule
+
+# Convenience name for target.
+_catkin_empty_exported_target: xarm_moveit_config/CMakeFiles/_catkin_empty_exported_target.dir/rule
+
+.PHONY : _catkin_empty_exported_target
+
+# clean rule for target.
+xarm_moveit_config/CMakeFiles/_catkin_empty_exported_target.dir/clean:
+	$(MAKE) -f xarm_moveit_config/CMakeFiles/_catkin_empty_exported_target.dir/build.make xarm_moveit_config/CMakeFiles/_catkin_empty_exported_target.dir/clean
+.PHONY : xarm_moveit_config/CMakeFiles/_catkin_empty_exported_target.dir/clean
+
+# clean rule for target.
+clean: xarm_moveit_config/CMakeFiles/_catkin_empty_exported_target.dir/clean
+
+.PHONY : clean
 
 #=============================================================================
 # Directory level rules for directory xarm_planning

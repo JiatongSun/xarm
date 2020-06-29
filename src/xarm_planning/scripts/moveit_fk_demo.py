@@ -22,27 +22,27 @@ class MoveItFkDemo:
         # Initialize gripper_group which needs to be controlled by move_group
         gripper = moveit_commander.MoveGroupCommander('gripper')
 
-        # set tolerance of error for arm and gripper
+        # Set tolerance of error for arm and gripper
         arm.set_goal_joint_tolerance(0.001)
         gripper.set_goal_joint_tolerance(0.001)
 
-        # move arm to initial position
+        # Move arm to initial position
         arm.set_named_target('home')
         arm.go()
 
-        # # set target position for gripper and move gripper
+        # Set target position for gripper and move gripper
         gripper_position = (np.array([-20, 20, -20, -20]) * np.pi / 180.0).tolist()
         gripper.set_joint_value_target(gripper_position)
         gripper.go()
 
-        # set target position for arm
+        # Set target position for arm
         joint_position = (np.array([0, -58, 89, 52, 0]) * np.pi / 180.0).tolist()
         arm.set_joint_value_target(joint_position)
 
-        # control arm to move
+        # Control arm to move
         arm.go()
 
-        # close and exit moveit
+        # Close and exit MoveIt
         moveit_commander.roscpp_shutdown()
 
 

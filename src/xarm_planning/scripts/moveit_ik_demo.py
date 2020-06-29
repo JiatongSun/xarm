@@ -39,50 +39,56 @@ class MoveItIkDemo:
         arm.set_goal_position_tolerance(0.01)
         arm.set_goal_orientation_tolerance(0.05)
 
+        # Move arm to forward position
+        arm.set_named_target('forward')
+        arm.go()
+        forward_pose = arm.get_current_pose()
+        rospy.sleep(1)
+
         # Move arm to initial position
         arm.set_named_target('home')
         arm.go()
-
-        # Use forward position as target
-        forward_pose = arm.get_current_pose().pose
+        rospy.sleep(2)
 
         # Set target position and quaternion for arm workspace
         target_pose = PoseStamped()
         target_pose.header.frame_id = reference_frame
         target_pose.header.stamp = rospy.Time.now()
-        target_pose.pose.position.x = forward_pose.position.x
-        target_pose.pose.position.y = forward_pose.position.y
-        target_pose.pose.position.z = forward_pose.position.z
-        target_pose.pose.orientation.x = forward_pose.orientation.x
-        target_pose.pose.orientation.y = forward_pose.orientation.y
-        target_pose.pose.orientation.z = forward_pose.orientation.z
-        target_pose.pose.orientation.w = forward_pose.orientation.w
+        target_pose.pose.position.x = 0
+        target_pose.pose.position.y = -0.2202
+        target_pose.pose.position.z = 0.0404
+        target_pose.pose.orientation.x = 0.5149
+        target_pose.pose.orientation.y = -0.5149
+        target_pose.pose.orientation.z = 0.4846
+        target_pose.pose.orientation.w = 0.4846
 
         # Set current state as initial state
         arm.set_start_state_to_current_state()
 
         # Set target position and pose of arm
-        arm.set_pose_target(target_pose, end_effector_link)
+        # arm.set_pose_target(target_pose, end_effector_link)
+        arm.set_pose_target(forward_pose, end_effector_link)
 
         # Plan trajectory
         traj = arm.plan()
 
         # Move arm along the planned trajectory
         arm.execute(traj)
+        rospy.sleep(1)
 
-        # Move end effector 5cm to the right
-        arm.shift_pose_target(2, -0.01, end_effector_link)
-        arm.go()
+        # # Move end effector 5cm to the right
+        # arm.shift_pose_target(2, -0.01, end_effector_link)
+        # arm.go()
+        #
+        # # Rotate end effector 90 degrees counterclockwise
+        # arm.shift_pose_target(5, -np.pi / 2, end_effector_link)
+        # arm.go()
 
-        # Rotate end effector 90 degrees counterclockwise
-        arm.shift_pose_target(5, -np.pi / 2, end_effector_link)
-        arm.go()
+        # # Move arm to initial position
+        # arm.set_named_target('home')
+        # arm.go()
 
-        # Move arm to initial position
-        arm.set_named_target('home')
-        arm.go()
-
-        # close and exit moveit
+        # Close and exit MoveIt
         moveit_commander.roscpp_shutdown()
 
 
