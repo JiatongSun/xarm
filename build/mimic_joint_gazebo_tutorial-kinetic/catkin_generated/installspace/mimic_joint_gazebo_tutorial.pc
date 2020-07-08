@@ -1,8 +1,0 @@
-prefix=/home/sun/Documents/Project/xarm/install
-
-Name: mimic_joint_gazebo_tutorial
-Description: Description of mimic_joint_gazebo_tutorial
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 

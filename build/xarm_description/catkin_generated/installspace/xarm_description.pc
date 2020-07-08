@@ -1,8 +1,0 @@
-prefix=/home/sun/Documents/Project/xarm/install
-
-Name: xarm_description
-Description: Description of xarm_description
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 
